@@ -1,4 +1,4 @@
-class PredictionResponseDTO():
+class BasicModelResponseDTO():
 
     team1_name = None
     team2_name = None
@@ -28,6 +28,9 @@ class PredictionResponseDTO():
     
     def set_team2_percent(self, percent):
         self.team2_percent = percent
+
+    def generate_prediction(self):
+        pass
 
     def generate_response(self):
         data = {
