@@ -7,20 +7,15 @@ class BasicModelService():
         pass
 
     #Service for making a prediction
-    def get_basic_model(self):
-        model_response = BasicModelResponseDTO()
-        # Need to actually get the model here and return it
-        # For now, return fake json
-        return {'message': 'yooo'}
-
-        # new_prediction = PredictionModelDAO()
-        # new_prediction.set_team1_name(team1)
-        # new_prediction.set_team2_name(team2)
-        # #Need to implement prediction models here...
-        # #Returning fake results for now...
-        # result_prediction = PredictionResponseDTO()
-        # result_prediction.set_team1_name(team1)
-        # result_prediction.set_team2_name(team2)
-        # result_prediction.set_team1_percent("0%")
-        # result_prediction.set_team2_percent("100%")
-        # return result_prediction.generate_response()
+    def basic_model_prediction(self, team1, team2):
+        # Need to actually use model here and return results
+        # Returning dummy prediction for now...
+        if (team1 == None or team2 == None):
+            raise InvalidTeamException()
+        else:
+            model_response = BasicModelResponseDTO()
+            model_response.set_team1_name(team1)
+            model_response.set_team2_name(team2)
+            model_response.set_team1_percent('100%')
+            model_response.set_team2_percent('0%')
+            return model_response.generate_response()

@@ -10,5 +10,7 @@ class BasicModelController(Resource):
 
     #Make a prediction
     def get(self):
+        team1 = request.args.get('team1')
+        team2 = request.args.get('team2')
         model = BasicModelService()
-        return model.get_basic_model()
+        return model.basic_model_prediction(team1, team2)

@@ -29,9 +29,6 @@ class BasicModelResponseDTO():
     def set_team2_percent(self, percent):
         self.team2_percent = percent
 
-    def generate_prediction(self):
-        pass
-
     def generate_response(self):
         data = {
                 'code': 0,
@@ -43,4 +40,4 @@ class BasicModelResponseDTO():
                     'team2Percent': self.team2_percent
                 }
         }
-        return(data, 200)
+        return (data, 200)
